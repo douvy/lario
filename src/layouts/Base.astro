@@ -9,7 +9,7 @@ interface Props {
   ogImage?: string;
 }
 
-const { title, description, canonical, ogImage = '/kauai.jpg' } = Astro.props;
+const { title, description, canonical, ogImage = '/lario.jpg' } = Astro.props;
 const canonicalUrl = canonical || Astro.url.href;
 ---
 
@@ -31,7 +31,7 @@ const canonicalUrl = canonical || Astro.url.href;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
-    <meta property="og:site_name" content="Kauai Spots" />
+    <meta property="og:site_name" content="Lake Como" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
