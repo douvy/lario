@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 
-const STORAGE_KEY = 'kauai-visited';
+const STORAGE_KEY = 'lario-visited';
 
 function readVisited(): Record<string, true> {
   try {

@@ -25,7 +25,6 @@ export default function AmbientCanvas() {
     window.addEventListener('resize', resize);
 
     const lines = 20;
-    const gapWidth = 60;
 
     const draw = () => {
       const w = canvas.width / (window.devicePixelRatio || 1);
@@ -33,15 +32,12 @@ export default function AmbientCanvas() {
 
       ctx.clearRect(0, 0, w, h);
 
-      const gapPos = w - ((time * 0.8) % (w + gapWidth));
-
       for (let i = 0; i < lines; i++) {
         const baseY = 30 + (i * 8);
         const alpha = 0.08 + (i === 0 ? 0.06 : 0);
-        const isTopLine = i === 0;
 
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(26, 138, 155, ${alpha * 2.5})`;
+        ctx.strokeStyle = `rgba(37, 99, 235, ${alpha * 2.5})`;
         ctx.lineWidth = 1;
 
         for (let x = 0; x <= w; x += 2) {
@@ -49,13 +45,7 @@ export default function AmbientCanvas() {
           const wave = Math.sin((time * 0.015) + (normalX * 3) + (i * 0.15)) * 2;
           const y = baseY + wave;
 
-          if (isTopLine && x > gapPos && x < gapPos + gapWidth) {
-            ctx.stroke();
-            ctx.beginPath();
-            continue;
-          }
-
-          if (x === 0 || (isTopLine && x === Math.ceil((gapPos + gapWidth) / 2) * 2)) {
+          if (x === 0) {
             ctx.moveTo(x, y);
           } else {
             ctx.lineTo(x, y);

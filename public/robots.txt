@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kauaispots.com/sitemap.xml
+Sitemap: https://lario.vercel.app/sitemap.xml

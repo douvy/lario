@@ -1,28 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="6" fill="#cd4189"/>
-  <path
-    d="M6 12 Q10 10 16 12 Q22 14 26 12"
-    stroke="#fff"
-    stroke-width="2"
-    stroke-linecap="round"
-    fill="none"
-    opacity="0.5"
-  />
-  <path
-    d="M6 17 Q10 15 16 17 Q22 19 26 17"
-    stroke="#fff"
-    stroke-width="2"
-    stroke-linecap="round"
-    fill="none"
-    opacity="0.8"
-  />
-  <path
-    d="M6 22 Q10 20 16 22 Q22 24 26 22"
-    stroke="#fff"
-    stroke-width="2"
-    stroke-linecap="round"
-    fill="none"
-    opacity="0.35"
-  />
-  <circle cx="22" cy="10" r="2.5" fill="#d45a2b"/>
+  <rect width="32" height="32" rx="6" fill="#2563eb"/>
+  <path d="M4 7 Q10 6 16 7 Q22 8 28 7" stroke="#fff" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.2"/>
+  <path d="M4 10 Q10 9 16 10 Q22 11 28 10" stroke="#fff" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.3"/>
+  <path d="M4 13 Q10 12 16 13 Q22 14 28 13" stroke="#fff" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.4"/>
+  <path d="M4 16 Q10 15 16 16 Q22 17 28 16" stroke="#fff" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.55"/>
+  <path d="M4 19 Q10 18 16 19 Q22 20 28 19" stroke="#fff" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="M4 22 Q10 21 16 22 Q22 23 28 22" stroke="#fff" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <path d="M4 25 Q10 24 16 25 Q22 26 28 25" stroke="#fff" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.35"/>
 </svg>

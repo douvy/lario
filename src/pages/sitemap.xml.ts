@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { SPOTS } from '../data/spots';
 
-const site = 'https://kauaispots.com';
+const site = 'https://lario.vercel.app';
 
 export const GET: APIRoute = () => {
   const urls = [

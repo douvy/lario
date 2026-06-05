@@ -1,4 +1,4 @@
-export type TierId = 'right-here' | 'quick-drive' | 'south-shore' | 'north-shore' | 'west-side';
+export type TierId = 'como' | 'west-shore' | 'east-shore' | 'centro-lago';
 
 export type Tier = {
   id: TierId;
@@ -10,17 +10,8 @@ export type Tier = {
 };
 
 export const TIERS: Tier[] = [
-  { id: 'right-here', label: 'Lihue', driveFromHotel: '0–10 min', icon: '📍', accent: 'teal' },
-  {
-    id: 'quick-drive',
-    label: 'Quick Drive',
-    driveFromHotel: '10–25 min',
-    icon: '🚗',
-    accent: 'teal',
-    note: 'Traffic through Kapaʻa can add 15–30 min at rush hour.'
-  },
-  { id: 'south-shore', label: 'South Shore', driveFromHotel: '20–30 min (Poipu/Koloa)', icon: '🏖️', accent: 'coral' },
-  { id: 'north-shore', label: 'North Shore', driveFromHotel: '30–50 min (Kilauea → Hanalei)', icon: '🌿', accent: 'north' },
-  { id: 'west-side', label: 'West Side', driveFromHotel: '45–60 min (Waimea)', icon: '🏜️', accent: 'ink' }
+  { id: 'como', label: 'Como', driveFromHotel: 'Walking distance', icon: '📍', accent: 'teal' },
+  { id: 'west-shore', label: 'West Shore', driveFromHotel: '10–20 min', icon: '🚗', accent: 'teal', note: 'Cernobbio, Laglio, Argegno' },
+  { id: 'east-shore', label: 'East Shore', driveFromHotel: '15–25 min', icon: '🚗', accent: 'coral', note: 'Torno, Nesso' },
+  { id: 'centro-lago', label: 'Centro Lago', driveFromHotel: '30–60 min or ferry', icon: '⛴️', accent: 'north', note: 'Bellagio, Varenna, Menaggio, Tremezzo' }
 ];
-

@@ -14,7 +14,7 @@ export function getStaticPaths() {
 const { spot } = Astro.props;
 const tier = TIERS.find((t) => t.id === spot.tierId);
 
-const title = `${spot.name} - Kauai ${spot.categoryLabel} | Kauai Spots`;
+const title = `${spot.name} - Lake Como ${spot.categoryLabel} | Lake Como Guide`;
 const description = `${spot.teaser} ${spot.notes.slice(0, 120)}...`;
 
 const mapsLink = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${spot.lat},${spot.lng}`)}`;
@@ -118,7 +118,7 @@ const structuredData = {
             <div class="mt-6 flex gap-3">
               <a
                 href={mapsLink}
-                class="flex-1 rounded-sm bg-ocean py-2.5 text-center text-[13px] tracking-tight text-white transition-all [box-shadow:hsl(330,54%,30%)_0_-2px_0_0_inset,hsl(330,54%,95%)_0_1px_3px_0] hover:bg-[hsl(330,54%,35%)] hover:[box-shadow:none] active:scale-[.99]"
+                class="flex-1 rounded-sm bg-ocean py-2.5 text-center text-[13px] tracking-tight text-white transition-all hover:bg-ocean-dim active:scale-[.99]"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -126,7 +126,7 @@ const structuredData = {
               </a>
               <a
                 href="/"
-                class="flex-1 flex items-center justify-center rounded-sm border border-border bg-surface py-2.5 text-[13px] tracking-tight text-muted [box-shadow:hsl(218,13%,50%,0.1)_0_-2px_0_0_inset] hover:bg-black/[0.02] hover:text-foreground hover:[box-shadow:none] transition-all active:scale-[.99]"
+                class="flex-1 flex items-center justify-center rounded-sm border border-border bg-surface py-2.5 text-[13px] tracking-tight text-muted hover:bg-black/[0.02] hover:text-foreground transition-all active:scale-[.99]"
               >
                 View all spots
               </a>
@@ -170,11 +170,11 @@ const structuredData = {
     <footer class="px-6 py-10 mt-12">
       <div class="flex items-center justify-between border-t border-border pt-6">
         <a href="/" class="group flex items-baseline gap-1.5">
-          <span class="font-display text-[18px] font-bold tracking-tight text-foreground">Kauai</span>
-          <span class="text-[11px] text-muted/60 group-hover:text-ocean transition-colors">spots</span>
+          <span class="font-display text-[18px] font-bold tracking-tight text-foreground">Lake Como</span>
+          <span class="text-[11px] text-muted/60 group-hover:text-ocean transition-colors">guide</span>
         </a>
         <p class="text-[11px] text-muted/40">
-          Curated from Lihue
+          Curated with love
         </p>
       </div>
     </footer>

@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Circle, ArrowRight, ArrowDown, ArrowUp, ArrowLeft } from 'lucide-react';
+import { Circle, ArrowRight, ArrowUp, ArrowLeft } from 'lucide-react';
 import TabBar, { type TabKey } from './TabBar';
 import type { TierId } from '../data/tiers';
 
 const regions: { id: TierId; name: string; Icon: typeof Circle }[] = [
-  { id: 'right-here', name: 'Lihue', Icon: Circle },
-  { id: 'quick-drive', name: 'East', Icon: ArrowRight },
-  { id: 'south-shore', name: 'South', Icon: ArrowDown },
-  { id: 'north-shore', name: 'North', Icon: ArrowUp },
-  { id: 'west-side', name: 'West', Icon: ArrowLeft },
+  { id: 'como', name: 'Como', Icon: Circle },
+  { id: 'west-shore', name: 'West', Icon: ArrowLeft },
+  { id: 'east-shore', name: 'East', Icon: ArrowRight },
+  { id: 'centro-lago', name: 'Centro', Icon: ArrowUp },
 ];
 
 export default function StickyHeader({
@@ -94,7 +93,7 @@ export default function StickyHeader({
           {regions.map((r) => {
             const count = tierCounts.get(r.id) ?? 0;
             const disabled = count === 0;
-            const isHere = r.id === 'right-here';
+            const isHere = r.id === 'como';
             const isActive = activeRegion === r.id;
 
             return (

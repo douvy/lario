@@ -1,11 +1,10 @@
 import type { TierId } from '../data/tiers';
 
 const regions: { id: TierId; name: string; direction?: string }[] = [
-  { id: 'right-here', name: 'Lihue' },
-  { id: 'quick-drive', name: 'East', direction: '→' },
-  { id: 'south-shore', name: 'South', direction: '↓' },
-  { id: 'north-shore', name: 'North', direction: '↑' },
-  { id: 'west-side', name: 'West', direction: '←' },
+  { id: 'como', name: 'Como' },
+  { id: 'west-shore', name: 'West', direction: '←' },
+  { id: 'east-shore', name: 'East', direction: '→' },
+  { id: 'centro-lago', name: 'Centro', direction: '↑' },
 ];
 
 export default function RegionNav({
@@ -17,9 +16,9 @@ export default function RegionNav({
 }) {
   return (
     <div className="relative bg-surface">
-      <div className="grid grid-cols-5">
+      <div className="grid grid-cols-4">
         {regions.map((r) => {
-          const isHere = r.id === 'right-here';
+          const isHere = r.id === 'como';
           const count = tierCounts.get(r.id) ?? 0;
           const disabled = count === 0;
 

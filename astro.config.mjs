@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://kauaispots.com',
+  site: 'https://lario.vercel.app',
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
