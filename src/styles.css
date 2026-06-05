@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Signifier';
+  src: url('/fonts/Signifier-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Signifier';
+  src: url('/fonts/Signifier-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Signifier';
+  src: url('/fonts/Signifier-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Signifier';
+  src: url('/fonts/Signifier-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Flexa';
+  src: url('/fonts/GT-Flexa-Standard-Regular.woff2') format('woff2'),
+       url('/fonts/GT-Flexa-Standard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --background: #f9f7f6;
+  --surface: #fcfbfb;
+  --foreground: #1a1918;
+  --muted: #6b6966;
+  --border: #dfdee4;
+  --accent: #292524;
+  --accent-hover: #3a3837;
+  --ocean: #1a8a9b;
+  --ocean-dim: #156d7a;
+  --marker: #d45a2b;
+  --palm: #5a9a6a;
+  --sand: #c4a574;
+  --sunset: #e8a87c;
+  --font-body: 'GT Flexa', system-ui, sans-serif;
+  --font-display: 'Signifier', Georgia, serif;
+  }
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-ocean: var(--ocean);
+  --color-ocean-dim: var(--ocean-dim);
+  --color-palm: var(--palm);
+  --color-sand: var(--sand);
+  --color-sunset: var(--sunset);
+  --color-marker: var(--marker);
+  --font-body: var(--font-body);
+  --font-display: var(--font-display);
+  }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Animations */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.stagger > * {
+  opacity: 0;
+  animation: fade-up 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+.stagger > *:nth-child(1) { animation-delay: 0ms; }
+.stagger > *:nth-child(2) { animation-delay: 50ms; }
+.stagger > *:nth-child(3) { animation-delay: 100ms; }
+.stagger > *:nth-child(4) { animation-delay: 150ms; }
+.stagger > *:nth-child(5) { animation-delay: 200ms; }
+.stagger > *:nth-child(6) { animation-delay: 250ms; }
+.stagger > *:nth-child(7) { animation-delay: 300ms; }
+.stagger > *:nth-child(8) { animation-delay: 350ms; }
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
