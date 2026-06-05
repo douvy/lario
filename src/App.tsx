@@ -1,5 +1,6 @@
 import { useMemo, useState, useRef } from 'react';
 import AmbientCanvas from './components/AmbientCanvas';
+import BoatSprite from './components/BoatSprite';
 import InfoBanners from './components/InfoBanners';
 import RegionNav from './components/RegionNav';
 import StickyHeader from './components/StickyHeader';
@@ -45,12 +46,13 @@ export default function App() {
   return (
     <div className="mx-auto min-h-dvh max-w-xl">
       {/* Hero */}
-      <header className="relative px-6 pb-6 pt-10">
+      <header className="relative px-6 pb-6 pt-10 overflow-hidden">
         <AmbientCanvas />
+        <BoatSprite />
 
         {/* Content */}
         <div className="relative">
-          <h1 className="font-display text-[42px] sm:text-[56px] font-medium leading-none tracking-tight text-foreground">
+          <h1 className="font-display text-[42px] sm:text-[56px] font-medium leading-none tracking-tight text-ocean">
             Lake Como
           </h1>
         </div>
@@ -58,8 +60,8 @@ export default function App() {
 
       {/* Spots count + Region Navigation */}
       <div className="mx-6 mt-6" ref={regionNavRef}>
-        <p className="mb-3 text-[12px] tracking-tight text-muted/60">
-          <span className="font-medium text-foreground/70">{totalSpots}</span> {tab === 'eat' ? 'places to eat' : 'things to do'}
+        <p className="mb-3 text-[14px] tracking-tight text-muted">
+          <span className="font-medium text-foreground">{totalSpots}</span> {tab === 'eat' ? 'places to eat' : 'things to explore'}
         </p>
         <div className="overflow-hidden rounded-lg border border-border">
           <RegionNav
@@ -75,7 +77,7 @@ export default function App() {
       </div>
 
       {/* Spacer before sticky */}
-      <div className="h-10" />
+      <div className="h-4" />
 
       {/* Sticky Header (Compact Nav + Tabs) */}
       <StickyHeader

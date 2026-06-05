@@ -4,35 +4,58 @@ export type TabKey = 'eat' | 'do';
 
 export default function TabBar({ tab, onChange }: { tab: TabKey; onChange: (t: TabKey) => void }) {
   return (
-    <div className="flex -mb-px">
+    <div className="flex">
       <button
         type="button"
         onClick={() => onChange('eat')}
         className={[
-          'flex flex-1 items-center justify-center gap-1.5 py-2.5 text-[13px] font-medium tracking-tight transition-colors',
-          tab === 'eat'
-            ? 'bg-ocean/5 text-ocean border-b border-ocean'
-            : 'text-muted hover:text-foreground',
+          'group relative flex flex-1 flex-col items-center gap-1 py-4 transition-colors',
+          tab === 'eat' ? 'text-foreground' : 'text-muted hover:text-foreground',
         ].join(' ')}
         aria-pressed={tab === 'eat'}
       >
-        <Utensils size={12} />
-        Where to Eat
+        <span className="text-[15px] tracking-tight font-medium">
+          Eat
+        </span>
+        <span className={[
+          'text-[13px] tracking-normal transition-colors',
+          tab === 'eat' ? 'text-muted' : 'text-muted/50'
+        ].join(' ')}>
+          Coffee to aperitivo
+        </span>
+        {/* Active indicator */}
+        {tab === 'eat' && (
+          <div className="absolute bottom-0 left-4 right-4 h-px bg-foreground/20" />
+        )}
       </button>
+
+      {/* Dotted divider */}
+      <div className="flex flex-col items-center justify-center">
+        <div className="h-6 w-px border-l border-dashed border-muted/30" />
+      </div>
 
       <button
         type="button"
         onClick={() => onChange('do')}
         className={[
-          'flex flex-1 items-center justify-center gap-1.5 py-2.5 text-[13px] font-medium tracking-tight transition-colors',
-          tab === 'do'
-            ? 'bg-ocean/5 text-ocean border-b border-ocean'
-            : 'text-muted hover:text-foreground',
+          'group relative flex flex-1 flex-col items-center gap-1 py-4 transition-colors',
+          tab === 'do' ? 'text-foreground' : 'text-muted hover:text-foreground',
         ].join(' ')}
         aria-pressed={tab === 'do'}
       >
-        <Compass size={12} />
-        Things to Do
+        <span className="text-[15px] tracking-tight font-medium">
+          Explore
+        </span>
+        <span className={[
+          'text-[13px] tracking-normal transition-colors',
+          tab === 'do' ? 'text-muted' : 'text-muted/50'
+        ].join(' ')}>
+          Villas, views, villages
+        </span>
+        {/* Active indicator */}
+        {tab === 'do' && (
+          <div className="absolute bottom-0 left-4 right-4 h-px bg-foreground/20" />
+        )}
       </button>
     </div>
   );

@@ -1,10 +1,10 @@
 import type { TierId } from '../data/tiers';
 
-const regions: { id: TierId; name: string; direction?: string }[] = [
-  { id: 'como', name: 'Como' },
-  { id: 'west-shore', name: 'West', direction: '←' },
-  { id: 'east-shore', name: 'East', direction: '→' },
-  { id: 'centro-lago', name: 'Centro', direction: '↑' },
+const regions: { id: TierId; name: string; subtitle?: string }[] = [
+  { id: 'como', name: 'Como', subtitle: 'Base' },
+  { id: 'west-shore', name: 'West', subtitle: '10–20 min' },
+  { id: 'east-shore', name: 'East', subtitle: '15–25 min' },
+  { id: 'centro-lago', name: 'Centro', subtitle: 'Ferry' },
 ];
 
 export default function RegionNav({
@@ -15,43 +15,35 @@ export default function RegionNav({
   onSelectTier: (tierId: TierId) => void;
 }) {
   return (
-    <div className="relative bg-surface">
-      <div className="grid grid-cols-4">
-        {regions.map((r) => {
+    <div className="bg-surface py-3">
+      <div className="flex items-center">
+        {regions.map((r, i) => {
           const count = tierCounts.get(r.id) ?? 0;
           const disabled = count === 0;
 
           return (
-            <button
-              key={r.id}
-              onClick={() => !disabled && onSelectTier(r.id)}
-              disabled={disabled}
-              className={[
-                'group relative px-2 py-5 transition-all',
-                disabled ? 'opacity-30' : 'hover:bg-ocean/5'
-              ].join(' ')}
-            >
-              {/* Active indicator line */}
-              <div className={[
-                'absolute inset-x-3 bottom-2 h-[2px] rounded-full transition-all',
-                'bg-transparent group-hover:bg-ocean/30'
-              ].join(' ')} />
-
-              {/* Direction arrow */}
-              {r.direction && (
-                <div className="mb-1 text-[11px] text-muted/60">{r.direction}</div>
+            <div key={r.id} className="flex items-center flex-1">
+              {/* Dotted divider */}
+              {i > 0 && (
+                <div className="h-8 w-px border-l border-dashed border-muted/30" />
               )}
 
-
-              <div className="font-display text-[15px] text-foreground">
-                {r.name}
-              </div>
-
-              {/* Count */}
-              <div className="mt-1.5 text-[11px] tabular-nums text-muted">
-                {count > 0 ? count : '—'}
-              </div>
-            </button>
+              <button
+                onClick={() => !disabled && onSelectTier(r.id)}
+                disabled={disabled}
+                className={[
+                  'flex-1 flex flex-col items-center gap-0.5 py-2 transition-all',
+                  disabled ? 'opacity-30' : 'hover:opacity-70'
+                ].join(' ')}
+              >
+                <span className="text-[14px] font-medium text-foreground">
+                  {r.name}
+                </span>
+                <span className="text-[11px] text-muted">
+                  {count > 0 ? `${count} spot${count > 1 ? 's' : ''}` : r.subtitle}
+                </span>
+              </button>
+            </div>
           );
         })}
       </div>
