@@ -35,7 +35,7 @@ export default function TierSection({
       </div>
 
       {tier.note && (
-        <p className="mb-6 rounded-sm border border-dashed border-ocean/30 bg-ocean/5 px-3 py-2.5 text-[13px] leading-relaxed text-foreground/80 [box-shadow:hsl(330,60%,50%,0.05)_0_-2px_0_0_inset]">
+        <p className="mb-6 rounded-sm border border-dashed border-ocean/30 bg-ocean/5 px-3 py-2.5 text-[13px] leading-relaxed text-foreground/80 [box-shadow:hsl(217,91%,50%,0.05)_0_-2px_0_0_inset]">
           {tier.note}
         </p>
       )}

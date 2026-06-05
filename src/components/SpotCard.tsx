@@ -68,7 +68,7 @@ export default function SpotCard({
                 )}
               </h3>
               <div className="mt-1.5">
-                <span className="h-[18px] px-1 pt-px inline-flex items-center border border-[#f0a0c0] bg-[#fdf2f7] font-mono text-[0.625rem] leading-6 text-[#9d174d]">
+                <span className="h-[18px] px-1 pt-px inline-flex items-center border border-ocean/30 bg-ocean/5 font-mono text-[0.625rem] leading-6 text-ocean">
                   {spot.categoryLabel}
                 </span>
                 {spot.hours && (
@@ -98,7 +98,7 @@ export default function SpotCard({
           <div className="mt-5 flex gap-3">
             <a
               href={mapsLink(spot.lat, spot.lng)}
-              className="flex-1 rounded-sm bg-ocean py-2.5 text-center text-[13px] tracking-tight text-white transition-all [box-shadow:hsl(330,54%,30%)_0_-2px_0_0_inset,hsl(330,54%,95%)_0_1px_3px_0] hover:bg-[hsl(330,54%,35%)] hover:[box-shadow:none] active:scale-[.99]"
+              className="flex-1 rounded-sm bg-ocean py-2.5 text-center text-[13px] tracking-tight text-white transition-all [box-shadow:hsl(217,91%,40%)_0_-2px_0_0_inset,hsl(217,91%,95%)_0_1px_3px_0] hover:bg-[hsl(217,91%,45%)] hover:[box-shadow:none] active:scale-[.99]"
               onClick={(e) => e.stopPropagation()}
               target="_blank"
               rel="noreferrer"
@@ -118,7 +118,7 @@ export default function SpotCard({
               className={[
                 'flex flex-1 cursor-pointer items-center justify-center rounded-sm py-2.5 text-[13px] tracking-tight transition-all active:scale-[.99]',
                 visited
-                  ? 'bg-ocean text-white [box-shadow:hsl(330,54%,30%)_0_-2px_0_0_inset,hsl(330,54%,95%)_0_1px_3px_0] hover:bg-[hsl(330,54%,35%)] hover:[box-shadow:none]'
+                  ? 'bg-ocean text-white [box-shadow:hsl(217,91%,40%)_0_-2px_0_0_inset,hsl(217,91%,95%)_0_1px_3px_0] hover:bg-[hsl(217,91%,45%)] hover:[box-shadow:none]'
                   : 'border border-border bg-surface text-muted [box-shadow:hsl(218,13%,50%,0.1)_0_-2px_0_0_inset] hover:bg-black/[0.02] hover:text-foreground hover:[box-shadow:none]'
               ].join(' ')}
               onClick={(e) => e.stopPropagation()}
