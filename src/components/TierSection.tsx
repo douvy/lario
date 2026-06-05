@@ -40,12 +40,6 @@ export default function TierSection({
         </p>
       )}
 
-      {tier.id === 'west-side' && tab === 'eat' && (
-        <div className="mb-6 rounded-sm border border-dashed border-ocean/30 bg-ocean/5 px-3 py-2.5 text-[13px] leading-relaxed text-foreground/80 [box-shadow:hsl(330,60%,50%,0.05)_0_-2px_0_0_inset]">
-          <strong className="text-ocean">Waimea cluster</strong> — Island Taco, Coconut Corner, Mama Bear's, Tiki Tacos. All walking distance before the canyon road.
-        </div>
-      )}
-
       <div className="stagger space-y-4">
         {spots.map((spot) => (
           <SpotCard

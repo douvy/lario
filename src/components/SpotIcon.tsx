@@ -25,11 +25,10 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 const tierIconMap: Record<string, LucideIcon> = {
-  'right-here': MapPin,
-  'quick-drive': Car,
-  'south-shore': Waves,
-  'north-shore': TreePalm,
-  'west-side': Mountain,
+  'como': MapPin,
+  'west-shore': Car,
+  'east-shore': Car,
+  'centro-lago': Ship,
 };
 
 export function CategoryIcon({ name, className = '' }: { name: string; className?: string }) {
