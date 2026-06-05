@@ -1,6 +1,7 @@
 import { useMemo, useState, useRef } from 'react';
 import AmbientCanvas from './components/AmbientCanvas';
 import BoatSprite from './components/BoatSprite';
+import SunSprite from './components/SunSprite';
 import InfoBanners from './components/InfoBanners';
 import RegionNav from './components/RegionNav';
 import StickyHeader from './components/StickyHeader';
@@ -49,6 +50,7 @@ export default function App() {
       <header className="relative px-6 pb-6 pt-10 overflow-hidden">
         <AmbientCanvas />
         <BoatSprite />
+        <SunSprite />
 
         {/* Content */}
         <div className="relative">
