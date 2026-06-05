@@ -93,7 +93,6 @@ export default function StickyHeader({
           {regions.map((r) => {
             const count = tierCounts.get(r.id) ?? 0;
             const disabled = count === 0;
-            const isHere = r.id === 'como';
             const isActive = activeRegion === r.id;
 
             return (
@@ -106,13 +105,11 @@ export default function StickyHeader({
                   disabled
                     ? 'opacity-30 cursor-default border-border'
                     : isActive
-                      ? isHere
-                        ? 'border-palm/20 bg-palm/5 text-palm'
-                        : 'border-ocean/20 bg-ocean/5 text-ocean'
+                      ? 'border-ocean/20 bg-ocean/5 text-ocean'
                       : 'border-border bg-transparent text-muted hover:border-ocean/20 hover:bg-ocean/5 hover:text-ocean',
                 ].join(' ')}
               >
-                <r.Icon size={10} className={isActive ? (isHere ? 'text-palm' : 'text-ocean') : 'text-muted/50'} fill={isHere && isActive ? 'currentColor' : 'none'} />
+                <r.Icon size={10} className={isActive ? 'text-ocean' : 'text-muted/50'} />
                 {r.name}
               </button>
             );
