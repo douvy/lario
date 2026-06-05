@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://lario.vercel.app',
+  site: 'https://www.lario.io',
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
