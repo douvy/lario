@@ -9,19 +9,13 @@ export default function TabBar({ tab, onChange }: { tab: TabKey; onChange: (t: T
         type="button"
         onClick={() => onChange('eat')}
         className={[
-          'group relative flex flex-1 flex-col items-center gap-1 py-4 transition-colors',
+          'group relative flex flex-1 items-center justify-center py-3 transition-colors',
           tab === 'eat' ? 'text-foreground' : 'text-muted hover:text-foreground',
         ].join(' ')}
         aria-pressed={tab === 'eat'}
       >
         <span className="text-[15px] tracking-tight font-medium">
           Eat
-        </span>
-        <span className={[
-          'text-[13px] tracking-normal transition-colors',
-          tab === 'eat' ? 'text-muted' : 'text-muted/50'
-        ].join(' ')}>
-          Coffee to aperitivo
         </span>
         {/* Active indicator */}
         {tab === 'eat' && (
@@ -38,19 +32,13 @@ export default function TabBar({ tab, onChange }: { tab: TabKey; onChange: (t: T
         type="button"
         onClick={() => onChange('do')}
         className={[
-          'group relative flex flex-1 flex-col items-center gap-1 py-4 transition-colors',
+          'group relative flex flex-1 items-center justify-center py-3 transition-colors',
           tab === 'do' ? 'text-foreground' : 'text-muted hover:text-foreground',
         ].join(' ')}
         aria-pressed={tab === 'do'}
       >
         <span className="text-[15px] tracking-tight font-medium">
           Explore
-        </span>
-        <span className={[
-          'text-[13px] tracking-normal transition-colors',
-          tab === 'do' ? 'text-muted' : 'text-muted/50'
-        ].join(' ')}>
-          Villas, views, villages
         </span>
         {/* Active indicator */}
         {tab === 'do' && (
